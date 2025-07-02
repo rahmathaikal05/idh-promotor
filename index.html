@@ -1,84 +1,142 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promo EZNET & Indihome</title>
-  <link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiHome Internet Cepat & Terpercaya</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><span class="indi">Indihome</span><span class="home"></span>  <span class="eznet"></span></h1>
+                </div>
+                <nav class="nav">
+                    <a href="#packages" class="nav-link">Paket Internet</a>
+                    <a href="#contact" class="nav-link">Kontak</a>
+                    <a href="indibiz/index.html" target="_blank" class="nav-link indibiz-link">IndiBiz</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<h1>Promo Paket Internet</h1>
+  
 
-<div class="btn-toggle">
-  <button id="btn-eznet" class="active" onclick="toggleCategory('eznet')">EZNET</button>
-  <button id="btn-indihome" onclick="toggleCategory('indihome')">INDIHOME</button>
-</div>
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-content">
+                <h3>Pilih Jenis Layanan</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn" data-provider="indihome">IndiHome</button>
+                    <button class="filter-btn" data-provider="eznet">EzNet</button>
+                </div>
+                
+                <div class="speed-filter">
+                    <label for="speedFilter">Filter Kecepatan:</label>
+                    <select id="speedFilter">
+                        <option value="all">Semua Kecepatan</option>
+                        <option value="10">10 Mbps</option>
+                        <option value="20">20 Mbps</option>
+                        <option value="50">50 Mbps</option>
+                        <option value="75">75 Mbps</option>
+                        <option value="150">150 Mbps</option>
+                        <option value="200">200 Mbps</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2 class="section-title">Paket Internet Terbaik</h2>
+            <div class="packages-grid" id="packagesGrid">
+                <!-- Packages will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="terms">
+        <div class="container">
+            <div class="terms-content">
+                <div class="terms-column">
+                    <h3><i class="fas fa-info-circle"></i> Syarat dan Ketentuan</h3>
+                    <ul>
+                        <li>New PSB tidak dikenakan biaya admin jasa layanan</li>
+                        <li>Biaya di atas sudah termasuk biaya admin jasa layanan Rp 5.000</li>
+                        <li>Wajib berlangganan minimal 12 bulan</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-column">
+                    <h3><i class="fas fa-tools"></i> Syarat Pemasangan</h3>
+                    <ul>
+                        <li>Titik lokasi (kirim share location melalui WhatsApp)</li>
+                        <li>Foto KTP</li>
+                        <li>Foto tampak depan rumah (untuk validasi alamat pemasangan)</li>
+                        <li>Nomor HP aktif</li>
+                        <li>Alamat email aktif</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Butuh Informasi Lebih Lanjut?</h2>
+                <p>Tim ahli kami siap membantu Anda memilih paket yang tepat</p>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>Rahmat Haikal</h3>
+                        <a href="https://wa.me/6282277256004?text=Halo%20saya%20ingin%20informasi%20lengkap%20tentang%20paket%20internet" class="contact-btn">
+                            082277256004
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+               
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#packages">Paket Internet</a></li>
+                        <li><a href="indibiz/index.html" target="_blank">IndiBiz</a></li>
+                        <li><a href="#contact">Konsultasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p><i class="fab fa-whatsapp"></i> 082277256004</p>
+                    <p><i class="fas fa-user"></i> Rahmat Haikal</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rahmat Haikal. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
 
 
-<!-- Deskripsi untuk EZNET -->
-<div id="eznet-info" class="info-box" style="display: none;">
-  <p><strong>Info:</strong> Layanan <strong>EZNET</strong> hanya tersedia di wilayah tertentu. Silakan hubungi admin untuk memastikan ketersediaan di lokasi Anda.</p>
-</div>
-
-
-
-
-<div style="text-align:center; margin: 1rem 0;">
-  <label for="speedFilter" style="font-weight: 500; margin-right: 0.5rem;">Filter Kecepatan:</label>
-  <select id="speedFilter" onchange="applyFilter()">
-    <option value="">Semua</option>
-    <option value="10">10 Mbps</option>
-    <option value="20">20 Mbps</option>
-    <option value="50">50 Mbps</option>
-    <option value="75">75 Mbps</option>
-    <option value="150">150 Mbps</option>
-    <option value="200">200 Mbps</option>
-  </select>
-</div>
-
-
-<div class="container" id="container">
-  <!-- Semua card dimasukkan oleh JavaScript -->
-</div>
-
-<div class="note">
-  <strong>Syarat dan Ketentuan:</strong>
-  <ul>
-    <li>New PSB tidak dikenakan biaya admin jasa layanan</li>
-    <li>Biaya di atas sudah termasuk biaya admin jasa layanan Rp5.000</li>
-    <li>Wajib berlangganan minimal 12 bulan</li>
-  </ul>
-</div>
-
-<div class="note">
-  <strong>Syarat Pemasangan:</strong>
-  <ul>
-   <li><b>Titik lokasi</b> (kirim share location melalui WhatsApp).</li>
-<li><b>Foto KTP.</b></li>
-<li><b>Foto tampak depan rumah</b> (untuk validasi alamat pemasangan).</li>
-<li><b>Nomor HP aktif.</b></li>
-<li><b>Alamat email aktif.</b></li>
-<li><b>Kirim ke:</b> 0822 7725 6004 (atau Klik)<a href="https://wa.me/6282277256004" target="_blank"
-     style=" color:#25D366; padding:0.5rem 1rem; border-radius:6px; text-decoration:none; text-align: left;"><b>WhatsApp</b>
-  </a></li>
-
-
-
-
-  </ul>
-</div>
-
-<div style="text-align:center; margin-top:2rem; font-size:0.9rem;">
-  <p>Info lengkap hubungi:</p>
-  <p><strong>Rahmat Haikal</strong></p>
-  <a href="https://wa.me/6282277256004" target="_blank"
-     style="display:inline-block; background:#25D366; color:white; padding:0.5rem 1rem; border-radius:6px; text-decoration:none;">
-    Chat via WhatsApp
-  </a>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>

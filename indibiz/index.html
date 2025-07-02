@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIBIZ - Paket Internet Bisnis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>INDIBIZ</h1>
+            <p>Solusi Internet Bisnis Terdepan</p>
+        </header>
+
+        <div class="filter-section">
+            <h3>Filter Kecepatan:</h3>
+            <select id="speedFilter" onchange="filterPackages()">
+                <option value="all">Semua Kecepatan</option>
+                <option value="50">50 Mbps</option>
+                <option value="75">75 Mbps</option>
+                <option value="100">100 Mbps</option>
+                <option value="150">150 Mbps</option>
+                <option value="200">200 Mbps</option>
+                <option value="300">300 Mbps</option>
+            </select>
+        </div>
+
+        <div class="package-types">
+            <button class="type-btn active" onclick="showPackageType('bisnis-basic')">Bisnis Basic</button>
+            <button class="type-btn" onclick="showPackageType('b2b')">B2B 1:1</button>
+        </div>
+
+        <!-- Bisnis Basic Packages -->
+        <div id="bisnis-basic" class="package-section">
+            <h2>Paket Bisnis Basic</h2>
+            
+            <div class="sub-category">
+                <h3>Internet Only (1P)</h3>
+                <div class="cards-container" id="basic-1p">
+                    <div class="card" data-speed="50">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 1P</h4>
+                            <div class="speed">50 Mbps</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 429,570<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="75">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 1P</h4>
+                            <div class="speed">75 Mbps</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 496,170<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="100">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 1P</h4>
+                            <div class="speed">100 Mbps</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 618,270<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="150">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 1P</h4>
+                            <div class="speed">150 Mbps</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 773,670<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="200">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 1P</h4>
+                            <div class="speed">200 Mbps</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 973,470<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="300">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 1P</h4>
+                            <div class="speed">300 Mbps</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 1,395,270<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-category">
+                <h3>Internet + Telepon (2P)</h3>
+                <div class="cards-container" id="basic-2p-phone">
+                    <div class="card" data-speed="50">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">50 Mbps</div>
+                            <div class="features">Internet + Telepon</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 473,970<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="75">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">75 Mbps</div>
+                            <div class="features">Internet + Telepon</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 540,570<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="100">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">100 Mbps</div>
+                            <div class="features">Internet + Telepon</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 662,670<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="150">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">150 Mbps</div>
+                            <div class="features">Internet + Telepon</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 818,070<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="200">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">200 Mbps</div>
+                            <div class="features">Internet + Telepon</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 1,017,870<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-category">
+                <h3>Internet + TV (2P)</h3>
+                <div class="cards-container" id="basic-2p-tv">
+                    <div class="card" data-speed="50">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">50 Mbps</div>
+                            <div class="features">Internet + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 651,570<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="75">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">75 Mbps</div>
+                            <div class="features">Internet + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 718,170<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="100">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">100 Mbps</div>
+                            <div class="features">Internet + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 840,270<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="150">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">150 Mbps</div>
+                            <div class="features">Internet + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 995,670<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="200">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 2P</h4>
+                            <div class="speed">200 Mbps</div>
+                            <div class="features">Internet + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 1,195,470<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-category">
+                <h3>Internet + Telepon + TV (3P)</h3>
+                <div class="cards-container" id="basic-3p">
+                    <div class="card" data-speed="50">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 3P</h4>
+                            <div class="speed">50 Mbps</div>
+                            <div class="features">Internet + Telepon + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 679,320<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="75">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 3P</h4>
+                            <div class="speed">75 Mbps</div>
+                            <div class="features">Internet + Telepon + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 745,920<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="100">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 3P</h4>
+                            <div class="speed">100 Mbps</div>
+                            <div class="features">Internet + Telepon + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 868,020<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="150">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 3P</h4>
+                            <div class="speed">150 Mbps</div>
+                            <div class="features">Internet + Telepon + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 1,023,420<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="200">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 3P</h4>
+                            <div class="speed">200 Mbps</div>
+                            <div class="features">Internet + Telepon + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 1,223,220<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+
+                    <div class="card" data-speed="300">
+                        <div class="card-header">
+                            <h4>Bisnis Basic 3P</h4>
+                            <div class="speed">300 Mbps</div>
+                            <div class="features">Internet + Telepon + TV</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="monthly-price">Rp 1,645,020<span>/bulan</span></div>
+                            <div class="installation-price">Pemasangan: Rp 166,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- B2B Packages -->
+        <div id="b2b" class="package-section" style="display: none;">
+            <h2>Paket B2B (1:1)</h2>
+            <div class="cards-container" id="b2b-packages">
+                <div class="card" data-speed="50">
+                    <div class="card-header">
+                        <h4>HSI B2B</h4>
+                        <div class="speed">50 Mbps</div>
+                        <div class="features">Dedicated 1:1</div>
+                    </div>
+                    <div class="price-section">
+                        <div class="monthly-price">Rp 487,290<span>/bulan</span></div>
+                        <div class="installation-price">Pemasangan: Rp 166,500</div>
+                    </div>
+                </div>
+
+                <div class="card" data-speed="75">
+                    <div class="card-header">
+                        <h4>HSI B2B</h4>
+                        <div class="speed">75 Mbps</div>
+                        <div class="features">Dedicated 1:1</div>
+                    </div>
+                    <div class="price-section">
+                        <div class="monthly-price">Rp 576,090<span>/bulan</span></div>
+                        <div class="installation-price">Pemasangan: Rp 166,500</div>
+                    </div>
+                </div>
+
+                <div class="card" data-speed="100">
+                    <div class="card-header">
+                        <h4>HSI B2B</h4>
+                        <div class="speed">100 Mbps</div>
+                        <div class="features">Dedicated 1:1</div>
+                    </div>
+                    <div class="price-section">
+                        <div class="monthly-price">Rp 742,590<span>/bulan</span></div>
+                        <div class="installation-price">Pemasangan: Rp 166,500</div>
+                    </div>
+                </div>
+
+                <div class="card" data-speed="150">
+                    <div class="card-header">
+                        <h4>HSI B2B</h4>
+                        <div class="speed">150 Mbps</div>
+                        <div class="features">Dedicated 1:1</div>
+                    </div>
+                    <div class="price-section">
+                        <div class="monthly-price">Rp 909,090<span>/bulan</span></div>
+                        <div class="installation-price">Pemasangan: Rp 166,500</div>
+                    </div>
+                </div>
+
+                <div class="card" data-speed="200">
+                    <div class="card-header">
+                        <h4>HSI B2B</h4>
+                        <div class="speed">200 Mbps</div>
+                        <div class="features">Dedicated 1:1</div>
+                    </div>
+                    <div class="price-section">
+                        <div class="monthly-price">Rp 1,164,390<span>/bulan</span></div>
+                        <div class="installation-price">Pemasangan: Rp 166,500</div>
+                    </div>
+                </div>
+
+                <div class="card" data-speed="300">
+                    <div class="card-header">
+                        <h4>HSI B2B</h4>
+                        <div class="speed">300 Mbps</div>
+                        <div class="features">Dedicated 1:1</div>
+                    </div>
+                    <div class="price-section">
+                        <div class="monthly-price">Rp 1,663,890<span>/bulan</span></div>
+                        <div class="installation-price">Pemasangan: Rp 166,500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="terms-section">
+            <h3>Syarat dan Ketentuan:</h3>
+            <ul>
+                <li>New PSB tidak dikenakan biaya admin jasa layanan</li>
+                <li>Biaya di atas sudah termasuk biaya admin jasa layanan Rp 5,000</li>
+                <li>Wajib berlangganan minimal 12 bulan</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <h3>Info Lengkap Hubungi:</h3>
+            <a href="https://wa.me/6282277256004" class="whatsapp-btn" target="_blank">
+                📱 Rahmat Haikal - 082277256004
+            </a>
+
+
+            <h3></h3>
+            <a href="http://rahmathaikal05.github.io/idh-promotor" class="whatsapp-btn"> IndiHome</a>
+        </div>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
