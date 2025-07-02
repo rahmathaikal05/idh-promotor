@@ -1,186 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promosi Indihome & Eznet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promo EZNET & Indihome</title>
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
-    <div class="dark-mode-toggle" id="darkModeToggle">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </div>
 
-    <div class="container">
-        <h1>Pilih Paket Internet Terbaik untukmu!</h1>
-        <p style="text-align: center; margin-bottom: 40px; color: var(--text-secondary);">Nikmati koneksi internet stabil dan cepat dari Indihome & Eznet.</p>
+<h1>Promo Paket Internet</h1>
 
- <h1>Paket Eznet</h1>
-<div class="product-section">
-
-    <div class="card eznet">
-        <div class="card-header">
-            <h3>Eznet Wirreles 10 Mbps</h3>
-            <p>EZnet Wireless 10Mbps adalah paket Internet Rumah Unlimited 10Mbps dengan FUP 120GB. Khusus bulan Juni-Agustus, Biaya pemasangan diskon dari 150rb hanya 30rb. WAJIB memasukkan titik lokasi rumah dengan benar</p>
-        </div>
-
-        <div class="card-price-details">
-            <ul>
-                <li>Kecepatan: <span>10 Mbps</span></li>
-                <li>Bulanan: <span>Rp. 177.600</span></li>
-                <li>Pemasangan: <span>Rp. 165.500</span></li>
-                <li>FUP: <span>120 GB</span></li>
-            </ul>
-            <span class="final-price">Rp. 177.600</span>
-        </div>
-        <div class="card-options">
-            <a href="https://wa.me/6282277256004?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Eznet%20Wireless%2010%20Mbps" class="order-button" id="eznetButton1">Tanya Sekarang</a>
-        </div>
-    </div>
-
-    <div class="card eznet">
-        <div class="card-header">
-            <h3>Eznet Wirreles 20 Mbps</h3>
-            <p>EZnet by Telkomsel menyediakan layanan internet rumah dengan kecepatan hingga 20 Mbps. Dibayarkan setelah proses pemasangan perangkat layanan EZnet by Telkomsel selesai.</p>
-        </div>
-        <div class="card-price-details">
-            <ul>
-                <li>Kecepatan: <span>20 Mbps</span></li>
-                <li>Bulanan: <span>Rp. 205.350</span></li>
-                <li>Pemasangan: <span>Rp. 165.500</span></li>
-                <li>FUP: <span>- GB</span></li>
-            </ul>
-            <span class="final-price">Rp. 205.350</span>
-        </div>
-        <div class="card-options">
-            <a href="https://wa.me/6282277256004?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Eznet%20Wireless%2020%20Mbps" class="order-button" id="eznetButton2">Tanya Sekarang</a>
-        </div>
-    </div>
+<div class="btn-toggle">
+  <button id="btn-eznet" class="active" onclick="toggleCategory('eznet')">EZNET</button>
+  <button id="btn-indihome" onclick="toggleCategory('indihome')">INDIHOME</button>
 </div>
 
-<h1>Paket Indihome</h1>
-<div class="product-section">
-
-    <div class="card">
-        <div class="card-header">
-            <h3>Indihome Internet Only 50 Mbps</h3>
-            <p>IndiHome Paket 50 Mbps Internet adalah paket dengan layanan internet rumah
-                Nikmati internet rumah dengan kecepatan hingga 50 Mbps.
-           <!--  Paket sudah termasuk bonus berlangganan aplikasi streaming IndiHomeTV, Prime Video, dan Catchplay-->    </p>
-        </div>
-        <div class="card-price-details">
-            <ul>
-                <li>Kecepatan: <span>50 Mbps</span></li>
-                <li>Bulanan: <span>Rp. 271.950</span></li>
-                <li>Pemasangan: <span>Rp. 165.500</span></li>
-                <li>FUP: <span>1800 GB</span></li>
-            </ul>
-            <span class="final-price">Rp. 271.950</span>
-        </div>
-        <div class="card-options">
-            <a href="https://wa.me/6282277256004?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Indihome%20Internet%20Only%2050%20Mbps" class="order-button" id="indihomeButton1">Tanya Sekarang</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header">
-            <h3>Indihome Internet Only 70 Mbps</h3>
-            <p>IndiHome Paket 70 Mbps Internet adalah paket dengan layanan internet rumah.
-                Nikmati internet rumah dengan kecepatan hingga 70 Mbps.
-            </p>
-        </div>
-        <div class="card-price-details">
-            <ul>
-                <li>Kecepatan: <span>70 Mbps</span></li>
-                <li>Bulanan: <span>Rp. 305.250</span></li>
-                <li>Pemasangan: <span>Rp. 165.500</span></li>
-                <li>FUP: <span>1900 GB</span></li>
-            </ul>
-            <span class="final-price">Rp. 305.250</span>
-        </div>
-        <div class="card-options">
-            <a href="https://wa.me/6282277256004?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Indihome%20Internet%20Only%2070%20Mbps" class="order-button" id="indihomeButton2">Tanya Sekarang</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header">
-            <h3>Indihome Internet Only 150 Mbps</h3>
-            <p>IndiHome Paket 150 Mbps Internet adalah paket dengan layanan internet rumah.
-                Nikmati internet rumah dengan kecepatan hingga 150 Mbps.
-            </p>
-        </div>
-        <div class="card-price-details">
-            <ul>
-                <li>Kecepatan: <span>150 Mbps</span></li>
-                <li>Bulanan: <span>Rp. 421.800</span></li>
-                <li>Pemasangan: <span style="color: red;">GRATIS</span></li>
-                <li>FUP: <span>1900 GB</span></li>
-            </ul>
-            <span class="final-price">Rp. 421.800</span>
-        </div>
-        <div class="card-options">
-            <a href="https://wa.me/6282277256004?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Indihome%20Internet%20Only%20150%20Mbps" class="order-button" id="indihomeButton3">Tanya Sekarang</a>
-        </div>
-    </div>
-
+<div style="text-align:center; margin: 1rem 0;">
+  <label for="speedFilter" style="font-weight: 500; margin-right: 0.5rem;">Filter Kecepatan:</label>
+  <select id="speedFilter" onchange="applyFilter()">
+    <option value="">Semua</option>
+    <option value="10">10 Mbps</option>
+    <option value="20">20 Mbps</option>
+    <option value="50">50 Mbps</option>
+    <option value="75">75 Mbps</option>
+    <option value="150">150 Mbps</option>
+    <option value="200">200 Mbps</option>
+  </select>
 </div>
 
 
----
+<div class="container" id="container">
+  <!-- Semua card dimasukkan oleh JavaScript -->
+</div>
 
-        <div class="terms-conditions">
-            <h2>Syarat dan Ketentuan:</h2>
-            <ul>
-              <li><b>New PSB (Pelanggan Baru) tidak dikenakan biaya admin jasa layanan.</b></li>
-<li><b>Biaya di atas sudah termasuk biaya admin jasa layanan Rp 5.000.</b></li>
-<li><b>Wajib berlangganan minimal 12 bulan.</b></li>
+<div class="note">
+  <strong>Syarat dan Ketentuan:</strong>
+  <ul>
+    <li>New PSB tidak dikenakan biaya admin jasa layanan</li>
+    <li>Biaya di atas sudah termasuk biaya admin jasa layanan Rp5.000</li>
+    <li>Wajib berlangganan minimal 12 bulan</li>
+  </ul>
+</div>
 
-            </ul>
-        </div>
-
-          <div class="terms-conditions">
-            <h2>Syarat Pemasangan:</h2>
-            <ul>
-       <li><b>Titik lokasi</b> <i>(kirim share location melalui WhatsApp)</i>.</li>
-<li><b>Foto KTP pemilik rumah atau penanggung jawab</b>.</li>
-<li><b>Foto tampak depan rumah</b> <i>(untuk validasi alamat pemasangan)</i>.</li>
-<li><b>Nomor HP aktif</b>.</li>
-<li><b>Alamat email aktif</b>.</li>
-
-<div class="contact-info">
-            <p></p>
-            <p><a href="https://wa.me/6282277256004">Kirim</a></p>
-        </div>
-    </div>
-
-
-            </ul>
+<div class="note">
+  <strong>Syarat Pemasangan:</strong>
+  <ul>
+   <li><b>Titik lokasi</b> (kirim share location melalui WhatsApp).</li>
+<li><b>Foto KTP.</b></li>
+<li><b>Foto tampak depan rumah</b> (untuk validasi alamat pemasangan).</li>
+<li><b>Nomor HP aktif.</b></li>
+<li><b>Alamat email aktif.</b></li>
+<li><b>Kirim ke:</b> 0822 7725 6004 (atau Klik)<a href="https://wa.me/6282277256004" target="_blank"
+     style=" color:#25D366; padding:0.5rem 1rem; border-radius:6px; text-decoration:none; text-align: left;"><b>WhatsApp</b>
+  </a></li>
 
 
 
-        </div>
 
+  </ul>
+</div>
 
-
-<div class="contact-info" style="text-align: center;">
+<div style="text-align:center; margin-top:2rem; font-size:0.9rem;">
   <p>Info lengkap hubungi:</p>
-  <a href="https://wa.me/6282277256004" class="whatsapp-button" target="_blank">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" class="wa-icon">
-    Rahmat Haikal (0822-7725-6004)
+  <p><strong>Rahmat Haikal</strong></p>
+  <a href="https://wa.me/6282277256004" target="_blank"
+     style="display:inline-block; background:#25D366; color:white; padding:0.5rem 1rem; border-radius:6px; text-decoration:none;">
+    Chat via WhatsApp
   </a>
 </div>
-<br>
-
-
 
 <script src="script.js"></script>
-
-
 </body>
 </html>

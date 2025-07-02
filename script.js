@@ -1,88 +1,73 @@
 
-        // Fungsi untuk mengupdate link WhatsApp Eznet
-        function updateEznetLink(selectElement) {
-            const selectedOption = selectElement.value;
-            const button = selectElement.nextElementSibling; // Dapatkan sibling berikutnya yaitu tombol
-            let message = "";
+let currentCategory = 'eznet';
 
-            switch (selectedOption) {
-                case "eznet-50mbps-reguler":
-                    message = "Halo, saya ingin memesan Eznet 50 Mbps Reguler";
-                    break;
-                case "eznet-50mbps-plus":
-                    message = "Halo, saya ingin memesan Eznet 50 Mbps Plus (Rp 190.000)";
-                    break;
-                case "eznet-100mbps-reguler":
-                    message = "Halo, saya ingin memesan Eznet 100 Mbps Reguler";
-                    break;
-                case "eznet-100mbps-pro":
-                    message = "Halo, saya ingin memesan Eznet 100 Mbps Pro (Rp 230.000)";
-                    break;
-                default:
-                    message = "Halo, saya tertarik dengan paket Eznet. Mohon info lebih lanjut.";
-            }
-            button.href = `https://wa.me/6282277256004?text=${encodeURIComponent(message)}`;
-        }
+const data = {
+  eznet: [
+    { paket: "EZNET Wireless - 10 Mbps", harga: "Rp155.000", bulanan: "Rp177.600", fup: "120 GB", pasang: "Rp166.500" },
+    { paket: "EZNET - 20 Mbps", harga: "Rp180.000", bulanan: "Rp205.350", fup: "700 GB", pasang: "Rp166.500" }
+  ],
+  indihome: [
+    { paket: "INET ONLY - 50 Mbps", harga: "Rp240.000", bulanan: "Rp271.950", fup: "1800 GB", pasang: "Rp166.500" },
+    { paket: "INET ONLY - 75 Mbps", harga: "Rp270.000", bulanan: "Rp305.250", fup: "1900 GB", pasang: "Rp166.500" },
+    { paket: "INET ONLY - 150 Mbps", harga: "Rp375.000", bulanan: "Rp421.800", fup: "2500 GB", pasang: "Rp166.500" },
+    { paket: "INET ONLY - 200 Mbps", harga: "Rp515.000", bulanan: "Rp577.200", fup: "3000 GB", pasang: "Rp166.500" },
+    { paket: "ONE DINAMIC - 50 Mbps + 15GB", harga: "Rp285.000", bulanan: "Rp321.900", fup: "-", pasang: "GRATIS" },
+    { paket: "ONE DINAMIC - 75 Mbps + 15GB", harga: "Rp310.000", bulanan: "Rp349.650", fup: "-", pasang: "GRATIS" },
+    { paket: "ONE DINAMIC - 150 Mbps + 15GB", harga: "Rp410.000", bulanan: "Rp460.650", fup: "-", pasang: "GRATIS" },
+    { paket: "INET + IndihomeTV - 50 Mbps", harga: "Rp355.000", bulanan: "Rp399.600", fup: "-", pasang: "Rp166.500" },
+    { paket: "INET + IndihomeTV - 75 Mbps", harga: "Rp385.000", bulanan: "Rp432.900", fup: "-", pasang: "Rp166.500" },
+    { paket: "INET + IndihomeTV - 150 Mbps", harga: "Rp510.000", bulanan: "Rp571.650", fup: "-", pasang: "Rp166.500" },
+    { paket: "INET + IndihomeTV - 200 Mbps", harga: "Rp650.000", bulanan: "Rp727.050", fup: "-", pasang: "Rp166.500" }
+  ]
+};
 
-        // Fungsi untuk mengupdate link WhatsApp Indihome
-        function updateIndihomeLink(selectElement) {
-            const selectedOption = selectElement.value;
-            const button = selectElement.nextElementSibling; // Dapatkan sibling berikutnya yaitu tombol
-            let message = "";
+// Fungsi untuk menampilkan kategori EZNET atau INDIHOME
+function toggleCategory(cat) {
+  currentCategory = cat;
+  document.getElementById('btn-eznet').classList.toggle('active', cat === 'eznet');
+  document.getElementById('btn-indihome').classList.toggle('active', cat === 'indihome');
+  applyFilter();
+}
 
-            switch (selectedOption) {
-                case "indihome-50mbps-standard":
-                    message = "Halo, saya ingin memesan Indihome Internet Only 50 Mbps Standard";
-                    break;
-                case "indihome-50mbps-premium":
-                    message = "Halo, saya ingin memesan Indihome Internet Only 50 Mbps Premium";
-                    break;
-                case "indihome-100mbps-bundling-basic":
-                    message = "Halo, saya ingin memesan Indihome Paket Bundling 100 Mbps Basic";
-                    break;
-                case "indihome-100mbps-bundling-plus":
-                    message = "Halo, saya ingin memesan Indihome Paket Bundling 100 Mbps Plus";
-                    break;
-                case "indihome-200mbps-triple-ultimate":
-                    message = "Halo, saya ingin memesan Indihome Triple Play 200 Mbps Ultimate";
-                    break;
-                case "indihome-200mbps-triple-gaming":
-                    message = "Halo, saya ingin memesan Indihome Triple Play 200 Mbps Gaming";
-                    break;
-                default:
-                    message = "Halo, saya tertarik dengan paket Indihome. Mohon info lebih lanjut.";
-            }
-            button.href = `https://wa.me/6282277256004?text=${encodeURIComponent(message)}`;
-        }
+// Fungsi untuk menerapkan filter kecepatan dan menampilkan kartu
+function applyFilter() {
+  const filter = document.getElementById('speedFilter').value;
+  const container = document.getElementById('container');
+  container.innerHTML = '';
 
-        // Fungsi Dark Mode
-        document.addEventListener('DOMContentLoaded', () => {
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
+  data[currentCategory].forEach(p => {
+    // Ekstrak kecepatan dari teks paket (contoh: 50 Mbps)
+    const match = p.paket.match(/(\d+)\s*Mbps/);
+    const speed = match ? match[1] : null;
 
-            // Cek preferensi dark mode dari local storage
-            const currentMode = localStorage.getItem('theme');
-            if (currentMode === 'dark') {
-                body.classList.add('dark-mode');
-            } else if (currentMode === null) {
-                // Jika belum ada di local storage, cek preferensi sistem
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-            }
+    // Jika filter dipilih dan tidak cocok, lewati
+    if (filter && speed !== filter) return;
 
+    // Format pesan WhatsApp
+    const text = encodeURIComponent(
+`Halo, saya tertarik dengan paket ${currentCategory === 'eznet' ? 'EZNET' : 'INDIHOME'} berikut:
 
-            darkModeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
+📶 Paket: ${p.paket}
+💰 Harga Paket: ${p.harga}
+📅 Harga Bulanan: ${p.bulanan}
+${p.fup && p.fup !== '-' ? '📦 FUP: ' + p.fup + '\n' : ''}🔧 Biaya Pemasangan: ${p.pasang}
 
-                // Simpan preferensi ke local storage
-                if (body.classList.contains('dark-mode')) {
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-        });
+Mohon informasi lebih lanjut. Terima kasih.`);
+
+    // Buat elemen HTML untuk setiap paket
+    const html = `
+      <div class="card fade-in">
+        <h3>${p.paket}</h3>
+        <p>Bulanan: ${p.bulanan}</p>
+        ${p.fup && p.fup !== '-' ? `<p>FUP: ${p.fup}</p>` : ''}
+        <p>Pemasangan: ${p.pasang}</p>
+        <a class="whatsapp" target="_blank"
+           href="https://wa.me/6282277256004?text=${text}">Tanya Sekarang</a>
+      </div>`;
+    
+    container.innerHTML += html;
+  });
+}
+
+// Tampilkan kategori EZNET saat pertama kali
+toggleCategory('eznet');
