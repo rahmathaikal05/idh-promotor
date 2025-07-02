@@ -21,13 +21,22 @@ const data = {
   ]
 };
 
-// Fungsi untuk menampilkan kategori EZNET atau INDIHOME
 function toggleCategory(cat) {
   currentCategory = cat;
   document.getElementById('btn-eznet').classList.toggle('active', cat === 'eznet');
   document.getElementById('btn-indihome').classList.toggle('active', cat === 'indihome');
+
+  // Tampilkan atau sembunyikan info EZNET
+  const eznetInfo = document.getElementById('eznet-info');
+  if (cat === 'eznet') {
+    eznetInfo.style.display = 'block';
+  } else {
+    eznetInfo.style.display = 'none';
+  }
+
   applyFilter();
 }
+
 
 // Fungsi untuk menerapkan filter kecepatan dan menampilkan kartu
 function applyFilter() {
@@ -70,4 +79,4 @@ Mohon informasi lebih lanjut. Terima kasih.`);
 }
 
 // Tampilkan kategori EZNET saat pertama kali
-toggleCategory('eznet');
+toggleCategory('indihome');
