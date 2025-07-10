@@ -1,8 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Promo Internet</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 1rem; }
+    .btn-group { margin-bottom: 1rem; }
+    button { padding: 0.5rem 1rem; margin-right: 5px; cursor: pointer; border: none; border-radius: 5px; }
+    .active { background-color: #cc0000; color: white; }
+    .card { background: white; padding: 1rem; margin: 1rem 0; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .whatsapp { display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #25d366; color: white; border-radius: 5px; text-decoration: none; }
+    .fade-in { animation: fadeIn 0.5s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    #eznet-info { margin-bottom: 1rem; font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
 
+  <div class="btn-group">
+    <button id="btn-eznet" onclick="changeHash('eznet')">EZNET</button>
+    <button id="btn-indihome" onclick="changeHash('indihome')">IndiHome</button>
+  </div>
+
+  <div id="eznet-info" style="display:none;">
+    ⚠️ *EZNET hanya tersedia di wilayah tertentu.*
+  </div>
+
+  <select id="speedFilter" onchange="applyFilter()">
+    <option value="">Semua Kecepatan</option>
+    <option value="10">10 Mbps</option>
+    <option value="20">20 Mbps</option>
+    <option value="50">50 Mbps</option>
+    <option value="75">75 Mbps</option>
+    <option value="150">150 Mbps</option>
+    <option value="200">200 Mbps</option>
+  </select>
+
+  <div id="container"></div>
+
+  <script>
     const data = {
       eznet: [
-        { paket: "EZNET Wireless - 10 Mbps", harga: "-", bulanan: "-", fup: "-", pasang: "-" },
-        { paket: "EZNET - 20 Mbps", harga: "Rp180.000", bulanan: "Rp216.450", fup: "700 GB", pasang: "Rp166.500" }
+        { paket: "EZNET Wireless - 10 Mbps", harga: "Rp155.000", bulanan: "Rp177.600", fup: "120 GB", pasang: "Rp166.500" },
+        { paket: "EZNET - 20 Mbps", harga: "Rp180.000", bulanan: "Rp205.350", fup: "700 GB", pasang: "Rp166.500" }
       ],
       indihome: [
         { paket: "INET ONLY - 50 Mbps", harga: "Rp240.000", bulanan: "Rp271.950", fup: "1800 GB", pasang: "Rp166.500" },
@@ -84,3 +124,6 @@ Mohon informasi lebih lanjut. Terima kasih.`);
     window.addEventListener('DOMContentLoaded', initFromHash);
     // Jalankan saat hash berubah (misal diklik tombol)
     window.addEventListener('hashchange', initFromHash);
+  </script>
+</body>
+</html>
